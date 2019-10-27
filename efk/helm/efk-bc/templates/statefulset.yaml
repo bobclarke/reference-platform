@@ -9,9 +9,10 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  serviceName: elasticsearch 
   selector:
     matchLabels:
-      elasticsearch
+      app: elasticsearch
       #app.kubernetes.io/name: {{ include "efk-bc.name" . }}
       #app.kubernetes.io/instance: {{ .Release.Name }}
   template:
@@ -87,7 +88,7 @@ spec:
         app: elasticsearch
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: do-block-storage
+      storageClassName: default
       resources:
         requests:
           storage: 100Gi
