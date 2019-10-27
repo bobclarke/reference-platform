@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "efk-bc.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "efk-bc.name" . }}
+    helm.sh/chart: {{ include "efk-bc.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: 9200
+      name: rest
+    - port: 9300
+      name: inter-node
+  selector:
+    app: elasticsearch
+    #app.kubernetes.io/name: {{ include "efk-bc.name" . }}
+    #app.kubernetes.io/instance: {{ .Release.Name }}
+  clusterIP: None
