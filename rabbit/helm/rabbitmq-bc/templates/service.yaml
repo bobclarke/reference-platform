@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "rabbit-bc.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "rabbit-bc.name" . }}
+    helm.sh/chart: {{ include "rabbit-bc.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: manager
+      port: 15672
+      targetPort: manager
+    - name: amqp
+      port: 5672
+      targetPort: amqp
+    - name: dist
+      port: 25672
+      targetPort: dist
+
+  selector:
+    app.kubernetes.io/name: {{ include "rabbit-bc.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}

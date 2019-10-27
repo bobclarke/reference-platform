@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "rabbit-bc.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "rabbit-bc.name" . }}
+    helm.sh/chart: {{ include "rabbit-bc.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "rabbit-bc.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "rabbit-bc.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: manager
+              containerPort: {{ .Values.service.managerPort }}
+            - name: amqp
+              containerPort: {{ .Values.service.amqp }}
+            - name: dist
+              containerPort: {{ .Values.service.distPort }}
+            
