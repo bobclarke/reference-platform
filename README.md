@@ -1,5 +1,5 @@
 # Reference Platform
-## Rabbit MQ 
+### Rabbit MQ 
 * Tutorial: https://sysadmincasts.com/episodes/59-fun-with-rabbitmq
 * Testing:
   * open a new terminal window and run ```kubectl port-forward --namespace bobclarke svc/rabbitmq-rabbitmq-bc 15672:15672 5672:5672```
