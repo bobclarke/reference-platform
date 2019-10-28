@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "efk-bc.fullname" . }}
+  name: elasticsearch
   labels:
     app.kubernetes.io/name: {{ include "efk-bc.name" . }}
     helm.sh/chart: {{ include "efk-bc.chart" . }}
