@@ -7,7 +7,10 @@ Rabbit MQ
   * go run main.go
   * cd rabbit/producer
   * go run main.go
+  
+| ![image](rabbit/images/testing1.png)|![image](rabbit/images/console.png)|
+|---|---|
 
-![image](images/testing1.png)
+![image](rabbit/images/testing1.png)
 
 ![image](https://docs.google.com/drawings/d/e/2PACX-1vQek78qhp8iu5PakFdCOzUDOiYI2aQvjH9aIGX7C_PBJd6tK4-p4YSo5I3x0k1sLQVk11oa6xAO1KaR/pub?w=2108&h=1088)
