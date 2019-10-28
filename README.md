@@ -16,6 +16,7 @@
 * Tutorial: https://www.digitalocean.com/community/tutorials/how-to-set-up-an-elasticsearch-fluentd-and-kibana-efk-logging-stack-on-kubernetes
 * Helm chart: efk/helm/efk-bc
 * Testing Elasticsearch:
+  * Hint: after installing the helm chart run ```kubectl rollout status sts/es-cluster``` as an alternative to ```kubectl get pods -n bobclarke```
   * kubectl port-forward es-cluster-0 9200:9200
   * 
 
