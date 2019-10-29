@@ -34,6 +34,8 @@
 * Testing Kibana
   * k port-forward kibana-c454d4f89-79w2z 5601:5601 -n bobclarke
   * Open a browswer and navigate to ```http://localhost:5601```
+  * Navigate to management (tip: expand & collapse left hand menu toggle is bottom left)
+  * Click "Index Patters" and search for the my_index index you added in the "testing elasticsearch" section above
   * TODO: secure kibana with okta?
 
 ![image](https://docs.google.com/drawings/d/e/2PACX-1vQek78qhp8iu5PakFdCOzUDOiYI2aQvjH9aIGX7C_PBJd6tK4-p4YSo5I3x0k1sLQVk11oa6xAO1KaR/pub?w=2108&h=1088)
