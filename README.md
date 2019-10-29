@@ -21,14 +21,15 @@
   * curl http://localhost:9200/_cluster/state?pretty
   * To list indices, run ```curl http://localhost:9200/_cat/indices```
   * To add something
-  ```curl -X POST http://localhost:9200/my_index/my_type_my_id -H 'Content-Type: application/json' -d \
+  ```
+  curl -X POST http://localhost:9200/my_index/my_type_my_id -H 'Content-Type: application/json' -d \
   '{
   "user":"bob",
   "message":"hello"
   }
   '
   ```
-  
+
 
 * Testing Kibana
   * k port-forward kibana-c454d4f89-79w2z 5601:5601 -n bobclarke
