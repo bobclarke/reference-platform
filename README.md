@@ -1,4 +1,9 @@
 # Reference Platform
+
+### Rig 
+AKS cluster: playground3-aks-cluster-admin
+Namespace: bobclarke
+
 ### Rabbit MQ 
 * Tutorial: https://sysadmincasts.com/episodes/59-fun-with-rabbitmq
 * Helm chart: rabbit/helm/rabbitmq-bc
